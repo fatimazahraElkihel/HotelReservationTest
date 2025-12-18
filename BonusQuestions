@@ -1,0 +1,20 @@
+ Answer for question 1 :
+
+No, this is not the recommended approach in a real-world application.
+
+Putting all the functions in a single service makes the class responsible for multiple concerns such as user management, room management, and booking logic.
+This violates the Single Responsibility Principle and makes the code harder to maintain and scale.
+
+However, for a technical test or a small application, this approach is acceptable because it keeps the implementation simple and easy to understand.
+
+---------------------------------------------------------
+
+Answer for question 2:
+
+Another way to handle this is to make rooms immutable or to version the rooms. Instead of updating an existing room, a new version of the room could be created, 
+and new bookings would reference the new version while old bookings would keep referencing the old one.
+
+In this solution, the recommended approach is to store a snapshot of the room and user data inside the booking at the time of reservation. 
+This ensures that previous bookings remain unchanged even if the room information is updated later. This approach is simple, reliable, and well suited for a booking system.
+
+
